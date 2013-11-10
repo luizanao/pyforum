@@ -10,5 +10,5 @@ Micro forum example using Pyramid, Bootstrap 3 and MongoDb.
 
 
  #####next releases:
- 	Add votes(+/-) to answers
- 	Login with social-auths (github) 
+ 	- Add votes(+/-) to answers
+ 	- Login with social-auths (github) 
