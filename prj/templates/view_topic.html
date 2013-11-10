@@ -1,0 +1,68 @@
+{% extends "templates/base.pt" %}
+
+{% block javascript %}
+		<script src="/static/js/main.js" />
+{% endblock %}
+
+{%block content%}
+		
+        	
+        	{%if view_topic %}
+        	   <div class="panel panel-default">
+  				<div class="panel-body">
+		  	        <div class="media">
+			              <div class="media-body">
+				                <h4 class="media-heading">
+				                	<a href="/topic/{{view_topic.url}}"> {{view_topic.title}}</a>
+				                </h4>
+								<p>{{view_topic.description}}</p>
+								<hr>
+									<img class="media-object" data-src="http://placecreature.com/35/35" alt="64x64"  src="http://placecreature.com/35/35">
+									<small>{{view_topic.author}}</small>
+					                <i class="fa fa-clock-o"></i>  <small>{{view_topic.topic_date}}</small>
+					        </div>
+			        </div>
+				</div>
+			</div>
+	        
+				
+		        {% if answers %}
+		        	<h1>Answers</h1>
+		        	{%for answer in answers %}
+						<div class="panel panel-default panel-answer">
+			  				<div class="panel-body">
+					  	        <div class="media">
+						              <div class="media-body">
+							               <p>{{answer.content}}</p>
+											<hr>
+												<img class="media-object" data-src="http://placecreature.com/35/35" alt="64x64"  src="http://placecreature.com/35/35">
+												<small>{{answer.author}}</small>
+								                <i class="fa fa-clock-o"></i>  <small>{{answer.answer_date}}</small>
+								        </div>
+			        				</div>
+								</div>
+							</div>
+					{%endfor%}
+			    {% else %}
+			    	<h4>No answers yet. Be the first!</h4>
+			    {% endif %}
+
+			        
+					<div class="well well-lg">
+        					<h1>Answer this question</h1>
+        					<form action="/topic/add-message/{{view_topic.url}}" method="POST" id="form-message">
+				        				<label for="author">Who is you?</label>
+							        	<input type="text" name="author" id="author" />
+							        	<span class="error-msg-author"></span>
+							        	<label for="content">What is your coment?</label>
+							        	<textarea name="content" id="content_textarea" cols="80" rows="8"></textarea>
+							        	<span class="error-msg-content"></span>
+										<button class='btn btn-primary'>New answer</button>
+							</form>
+					</div>
+	
+	        {%endif%}
+
+
+	
+{%endblock%}

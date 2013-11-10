@@ -1,0 +1,36 @@
+{% extends "templates/base.pt" %}
+
+{%block javascript%}
+	<script src="/static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$(".alert").alert();
+	</script>	
+{%endblock%}
+	
+{%block content%}
+		<h1>Showing results for <strong>answer</strong></h1>
+        {% if topics %}
+        	{% for topic in topics %}
+        	   <div class="panel panel-default">
+  				<div class="panel-body">
+		  	        <div class="media">
+			              <div class="media-body">
+				                <h4 class="media-heading">
+				                	<a href="/topic/{{topic.url}}"> {{topic.title}}</a>
+				                </h4>
+								<p>{{topic.description | truncate(185)}}</p>
+								<hr>
+									<img class="media-object" data-src="http://placecreature.com/35/35" alt="64x64"  src="http://placecreature.com/35/35">
+									<small>{{topic.author}}</small>
+					                <i class="fa fa-clock-o"></i>  <small>{{topic.topic_date}}</small>
+			              </div>
+			        </div>
+				</div>
+			</div>
+	        {% endfor %}
+		{% else %}
+			<h3>Sorry. We could not find any results. <a href="/new-topic" class="ask-new-question">  Ask a question now.</a></h3>
+		{% endif %}
+		
+		
+{%endblock%}

@@ -1,0 +1,37 @@
+{% extends "templates/base.pt" %}
+
+{%block javascript%}
+	<script src="/static/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$(".alert").alert();
+	</script>	
+{%endblock%}
+	
+{%block content%}
+		<h1>Search Results...</h1>
+        {% if topics %}
+        	{% for topic in topics %}
+        	   <div class="bs-docs">
+	            <div class="media">
+	              <a class="pull-left" href="#">
+	                <img class="media-object" data-src="http://placecreature.com/100/100" alt="64x64" style="width: 64px; height: 64px;" src="http://placecreature.com/100/100">
+	              </a>
+	              <div class="media-body">
+	                <h4 class="media-heading"><a href="/topic/{{topic.url}}"> {{topic.title}}</a></h4>
+	                <span class="label">{{topic.author}}</span>
+	                <small>posted {{topic.topic_date}}</small>
+	                <p>{{topic.description | truncate(150)}}</p>
+	              </div>
+	            </div>
+	          </div>
+	        {% endfor %}
+		{% else %}
+			
+			<div class="alert">
+			  <button type="button" class="close" data-dismiss="alert">&times;</button>
+			 <p>Sorry. We don't find nothing. <a href="/new-topic/">Why don't question for Everbody?</a></p>
+			</div>
+		{% endif %}
+		
+		
+{%endblock%}

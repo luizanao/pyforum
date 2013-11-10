@@ -1,0 +1,37 @@
+{% extends "templates/base.pt" %}
+
+{%block content%}
+		{% if flag_five %}
+			<h2>Last 5 Topics</h2>
+		{% else %}
+			<h1>Showing all topics <small class="last-five"><a href="/last-five">Try last 5 topics add</a></h1></small>
+		{% endif %}
+
+        {% if topics %}
+        	{%for topic in topics %}
+        	<div class="panel panel-default">
+  				<div class="panel-body">
+		  	        <div class="media">
+			              <div class="media-body">
+				                <h4 class="media-heading">
+				                	<a href="/topic/{{topic.url}}"> {{topic.title}}</a>
+				                </h4>
+								<p>{{topic.description | truncate(185)}}</p>
+								<hr>
+									<img class="media-object" data-src="http://placecreature.com/35/35" alt="64x64"  src="http://placecreature.com/35/35">
+									<small>{{topic.author}}</small>
+					                <i class="fa fa-clock-o"></i>  <small>{{topic.topic_date}}</small>
+					                <a href="/topic/{{topic.url}}" class="btn btn-primary btn-lg">view</a>
+			              </div>
+			        </div>
+				</div>
+			</div>
+
+	        {% endfor %}
+
+		{% else %}
+			<p>BAD! This forum don't have topics yet. <a href="/new-topic/">Be First</a></p>
+		{% endif %}
+		
+		
+{%endblock%}

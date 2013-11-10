@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pyramid Forum</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+      
+        <link rel="stylesheet" href="/static/css/bootstrap.css" type='text/css'/>
+        <link rel="stylesheet" href="/static/css/bootstrap-theme.css" type='text/css'/>
+        <link rel="stylesheet" href="/static/css/main.css" type='text/css'/>  
+        
+        <link href='http://fonts.googleapis.com/css?family=Lato:700,400,100' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,600' rel='stylesheet' type='text/css'>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+        {% block css %}{% endblock %}
+        
+    </head>
+    <body>
+      <div id="container-wrapper">
+              <!--[if lt IE 7]>
+                  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+              <![endif]-->
+      		<p class="navbar-text navbar-right">
+              <a href="/" class="logo">
+                <span>py</span>forum
+              </a>
+              <a class="btn btn-primary " href="/new-topic">new question</a>
+          </p>
+          </header>
+                    	  
+          <div class="base-center-form">
+            <h1>Everything you need to know</h1>
+            
+              <form action="/find-topic" method="POST">
+                <input type="text" placeholder="Your Search - {{count}} Topics Active" class="large-find" name="find" />
+                <button class="btn btn-primary">
+                    <i class="fa fa-search fa-3x"></i>
+                </button>
+              </form>
+            
+          </div>		
+        
+            <div class="hero-unit">
+                      {%block content%}{%endblock%}
+            </div>
+          
+            <footer>
+                <div class="hero-unit">
+                      <a href="/" class="logo">
+                        <span>py</span>forum
+                      </a>
+                      <p><small>Created by: <a href="http://github.com/luizanao" class="creator"><strong>Luiz Felipe</strong></a></p>
+                      <p><small>powered by Pyramid, Bootstrap and Mongodb</small></p>
+                </div>
+            </footer>
+
+              <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+              <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+              {% block javascript %}{% endblock %}
+
+              <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+              <script>
+                  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+                  function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+                  e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+                  e.src='//www.google-analytics.com/analytics.js';
+                  r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+                  ga('create','UA-XXXXX-X');ga('send','pageview');
+              </script>
+       </div><!--container>
+    </body>
+</html>

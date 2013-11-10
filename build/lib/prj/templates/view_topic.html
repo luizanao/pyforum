@@ -1,0 +1,66 @@
+{% extends "templates/base.pt" %}
+
+{% block javascript %}
+		<script src="/static/js/main.js" />
+{% endblock %}
+
+{%block content%}
+		
+        	
+        	{%if view_topic %}
+        	   <div class="bs-docs">
+	            <div class="media">
+	              <a class="pull-left" href="#">
+	                <img class="media-object" data-src="http://placecreature.com/100/100" alt="64x64" style="width: 64px; height: 64px;" src="http://placecreature.com/100/100">
+	              </a>
+	              <div class="media-body">
+	                <h2 class="media-heading"> {{view_topic.title}}   <span class="label">{{view_topic.author}}</span></h2>
+	                <p>{{view_topic.description}}</p>
+	              </div>
+	            </div>
+	          </div>
+	        
+				
+		        {% if answers %}
+		        	<h3>Answers</h3>
+		        	{%for answer in answers %}
+						<div class="bs-docs answer">
+				            <div class="media">
+				              <a class="pull-left" href="#">
+				                <img class="media-object" data-src="http://placecreature.com/60/60" alt="64x64" src="http://placecreature.com/60/60">
+				              </a>
+				              	
+				              <div class="media-body">
+				              	 <div class="btn-group">
+								    <a class="btn btn-mini" href="/vote/up/{{view_topic.url}}/{{answer}}"><i class=" icon-circle-arrow-up"></i></a>
+								    <a class="btn btn-mini" href="#"></i>{{answer.votes}} Votes</a>
+								    <a class="btn btn-mini" href="#"><i class=" icon-circle-arrow-down"></i></a>
+								    </div>
+									<span class="label">{{answer.author}}</span>
+								</div>
+				                <p><i class='icon-comment'></i> {{answer.content}}</p>
+				              </div>
+				            </div>
+				         </div>
+					{%endfor%}
+			    {% else %}
+			    	<h4>No answers yet. Be the first!</h4>
+			    {% endif %}
+
+	        	<div class="form-new">	
+	        		<h3>New Answer</h3>
+		        	<form action="/topic/add-message/{{view_topic.url}}" method="POST" id="form-message">
+		        				<label for="author">Author</label>
+					        	<input type="text" name="author" id="author" />
+					        	<span class="error-msg-author"></span>
+					        	<label for="content">Coment</label>
+					        	<textarea name="content" id="content_textarea" cols="80" rows="8"></textarea>
+					        	<span class="error-msg-content"></span>
+								<button class='btn btn-primary'>add answer</button>
+					</form>
+				</div>
+	        {%endif%}
+
+
+	
+{%endblock%}

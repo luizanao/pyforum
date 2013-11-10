@@ -1,0 +1,28 @@
+{% extends "templates/base.pt" %}
+
+{% block content %}
+    <h3>Create a new question</h3>
+    {{ form.begin(request.route_url('new_topic')) }}
+        <div class="panel panel-default panel-form">
+            <div class="panel-body">
+              
+              {{ form.label("What is your question?:") }}
+              {{ form.text('title') }}
+              {{ form.errorlist("title") }}
+
+              {{ form.label("Who is you?") }}
+              {{ form.text('author') }}
+              {{ form.errorlist("author") }}
+              
+              {{ form.label("Give us some datails about your question") }}
+              
+              <textarea name="description" id="description" cols="80" rows="8"></textarea>
+              {{ form.errorlist("description") }}
+              <hr>
+              <button class='btn btn-primary btn-lg' >Create new Topic</button>
+            </div>
+        </div>
+          
+    {{ form.end() }}
+
+{% endblock %}
