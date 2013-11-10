@@ -7,3 +7,8 @@ Micro forum example using Pyramid, Bootstrap 3 and MongoDb.
  - pyramid - http://docs.pylonsproject.org/en/latest/
  - mongodb - http://www.mongodb.org/
  - bootstrap - http://getbootstrap.com
+
+
+ #####next releases:
+ 	Add votes(+/-) to answers
+ 	Login with social-auths (github) 

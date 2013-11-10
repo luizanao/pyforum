@@ -33,7 +33,7 @@ def main(global_config, **settings):
     config.add_route('find', '/find-topic')
     config.add_route('view_topic', '/topic/{url}')
     config.add_route('new_answer', '/topic/add-message/{url}')
-    config.add_route('vote_up', '/vote/up/{url}/{id}')
+    
     
 
     db_url = urlparse(settings['mongo_uri'])

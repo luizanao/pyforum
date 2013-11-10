@@ -121,17 +121,6 @@ def new_answer(request):
 	return HTTPFound(location='/')
 
 
-@view_config(route_name="vote_up")
-def vote_up(request):
-	'''
-	incremet Vote for answer. Call ajax mehtod
-	'''
-	# votes = request.db['answer'].find({'_id': 'ObjectId("'+request.matchdict["id"]+'")'})
-	#.update({ '$inc' : { 'votes' : +1 }})
-	
-	return HTTPFound(location='/topic/'+request.matchdict['url'])
-
-
 @view_config(route_name='last_five')
 def last_five(request):
 	'''
