@@ -1,11 +1,9 @@
-PyForum
+#PyForum
 
-About learn Pyramid Framework with New Bootstrap and thee powerfull MongoDB.
+Micro forum example using Pyramid, Bootstrap 3 and MongoDb.
 
-live demo:
-http://forum.luizanao.com
+###Live Demo <http://forum.luizanao.com>
 
-
-
-
-
+ - pyramid - http://docs.pylonsproject.org/en/latest/
+ - mongodb - http://www.mongodb.org/
+ - bootstrap - http://getbootstrap.com
