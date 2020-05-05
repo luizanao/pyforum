@@ -1,14 +1,14 @@
-#PyForum
+# PyForum
 
 Micro forum example using Pyramid, Bootstrap 3 and MongoDb.
 
-###Live Demo <http://forum.luizanao.com>
+### Live Demo ~<http://forum.luizanao.com>~
 
- - pyramid - http://docs.pylonsproject.org/en/latest/
- - mongodb - http://www.mongodb.org/
- - bootstrap - http://getbootstrap.com
+ - Pyramid - http://docs.pylonsproject.org/en/latest/
+ - Mongodb - http://www.mongodb.org/
+ - Bootstrap - http://getbootstrap.com
 
 
- #####next releases:
- 	- Add votes(+/-) to answers
+ ##### TODO:
+ 	- Add votes (+/-) to answers
  	- Login with social-auths (github) 
