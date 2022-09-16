@@ -13,7 +13,7 @@ requires = [
     "Chameleon==2.13-1",
     "FormEncode==1.2.6",
     "Jinja2==2.7.1",
-    "Mako==0.9.0",
+    "Mako==1.2.2",
     "MarkupSafe==0.18",
     "PasteDeploy==1.5.0",
     "Pygments==1.6",
